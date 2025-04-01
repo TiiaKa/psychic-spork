@@ -89,7 +89,7 @@ Navigaatio :
 
 Käyttäjä näkee tehtävät pääsivulla, josta voi lisätä uuden tehtävän, tunnisteen, asettaa deadlinen jab muokata asetuksia
 (+ jakaa listan toiselle käyttäjälle)  
-![Proto](https://github.com/TiiaKa/psychic-spork/main/IMG20250401184746)
+![Proto](https://github.com/TiiaKa/psychic-spork/blob/9deef0ff1e312ebc3210b07a4ceeb34ecc8e72af/IMG20250401184746.jpg)
 
 **Tekninen suunnittelu**  
 
