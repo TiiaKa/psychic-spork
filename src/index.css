@@ -1,0 +1,4 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/*näillä riveillä Tailwind luo CSS-tyylit automaattisesti, ei tarvitse vanhoja CSS-tyylejä*/
