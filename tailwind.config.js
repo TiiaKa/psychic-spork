@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+    darkMode: 'class', // dark mode -tyyliluokka
     content: [ 
       "./src/**/*.{js,jsx,ts,tsx}", 
     ],//määrittelee polut joista Tailwind etsii käytettyjä luokkia (className) tyylien luontiin,näistä tiedostoista Tailwind etsii tyylit
