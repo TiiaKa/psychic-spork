@@ -7,7 +7,13 @@ module.exports = {
     theme: {
       extend: { 
         colors: {
-          Pinkki: "#ff69b4", 
+          Pinkki: "#ff69b4",
+          PastelliKeltainen: "#fff9c4",
+          PastelliLila: "#e6e6fa",
+          PastelliVihrea: "#d0f0c0",
+          PastelliVaaleanpunainen: "#ffe4e1",
+          PastelliSininen: "#add8e6",
+          PastelliVioletti: "#dda0dd",
         }, // tällä laajennetaan Tailwindin oletusteemoja
       }, // tänne lisäsin omia värejä, myös fontteja voi lisätä
     },//tätä tarvitaan jos haluaa käyttää Tailwindin lisäosia, esim. lomakkeiden (forms) muotoiluun
