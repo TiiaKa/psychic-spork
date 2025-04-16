@@ -11,23 +11,57 @@ function App() {
     () => localStorage.getItem('darkMode') === 'true'
   );
 
+  const [username, setUsername] = useState(
+    localStorage.getItem('username') || 'Käyttäjä'
+  );
+
+  const [tasks, setTasks] = useState(() => {
+    const saved = localStorage.getItem('tasks');
+    return saved ? JSON.parse(saved) : [];
+  });
+
+  const [editTaskId, setEditTaskId] = useState(null);
+  const [editText, setEditText] = useState('');
+
   useEffect(() => {
     localStorage.setItem('darkMode', darkMode);
-    if (darkMode) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
+    document.documentElement.classList.toggle('dark', darkMode);
   }, [darkMode]);
+
+  useEffect(() => {
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+  }, [tasks]);
 
   return (
     <ErrorBoundary>
       <Router>
         <div className={`min-h-screen ${darkMode ? 'bg-gray-900 text-white' : 'bg-white text-black'}`}>
-          <Header />
+        <Header username={username} darkMode={darkMode} setDarkMode={setDarkMode} />
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/settings" element={<Settings darkMode={darkMode} setDarkMode={setDarkMode} />} />
+            <Route
+              path="/"
+              element={
+                <Home
+                  tasks={tasks}
+                  setTasks={setTasks}
+                  editTaskId={editTaskId}
+                  setEditTaskId={setEditTaskId}
+                  editText={editText}
+                  setEditText={setEditText}
+                />
+              }
+            />
+            <Route
+              path="/settings"
+              element={
+                <Settings
+                  darkMode={darkMode}
+                  setDarkMode={setDarkMode}
+                  username={username}
+                  setUsername={setUsername}
+                />
+              }
+            />
             <Route path="/tags" element={<Tags />} />
           </Routes>
         </div>

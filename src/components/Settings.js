@@ -1,13 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
-const Settings = ({ darkMode, setDarkMode }) => {
-  const [username, setUsername] = useState(
-    () => localStorage.getItem('username') || 'Käyttäjä'
-  );
+const Settings = ({ darkMode, setDarkMode, username, setUsername }) => {
+  const [inputValue, setInputValue] = useState(username);
+  useEffect(() => {
+    setInputValue(username);
+  }, [username]);
 
-  const handleUsernameChange = (e) => {
-    setUsername(e.target.value);
-    localStorage.setItem('username', e.target.value);
+  const handleUsernameChange = (e) => setInputValue(e.target.value);
+
+  const handleUsernameSave = () => {
+    setUsername(inputValue);
+    localStorage.setItem('username', inputValue);
   };
 
   const handleCopyInvite = () => {
@@ -25,8 +28,8 @@ const Settings = ({ darkMode, setDarkMode }) => {
   };
 
   return (
-    <div className="p-6 space-y-6 bg-PastelliLila min-h-screen">
-      <h1 className="text-2xl font-bold text-black">⚙️ Asetukset</h1>
+<div className="p-6 space-y-6 bg-PastelliLila dark:bg-gray-800 min-h-screen text-black dark:text-white">
+<h1 className="text-2xl font-bold">⚙️ Asetukset</h1>
 
       <section>
         <h2 className="text-lg font-semibold mb-2 text-black">🎨 Väriteema</h2>
@@ -49,10 +52,11 @@ const Settings = ({ darkMode, setDarkMode }) => {
         <h2 className="text-lg font-semibold mb-2 text-black">🧑 Käyttäjänimi</h2>
         <input
           type="text"
-          value={username}
+          value={inputValue}
           onChange={handleUsernameChange}
           className="p-2 rounded border border-gray-400"
         />
+        <button onClick={handleUsernameSave} className="ml-2 bg-PastelliSininen px-2 py-1 rounded">Tallenna</button>
       </section>
 
       <section>

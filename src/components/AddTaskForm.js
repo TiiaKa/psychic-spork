@@ -46,6 +46,7 @@ const AddTaskForm = ({ onAdd }) => {
         <option value="Koulu">Koulu</option>
         <option value="Koti">Koti</option>
         <option value="Vapaa-aika">Vapaa-aika</option>
+        <option value="Muu">Muu</option>
       </select>
       <input
         type="date"

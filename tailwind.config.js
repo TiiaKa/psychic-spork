@@ -6,6 +6,9 @@ module.exports = {
     ],//määrittelee polut joista Tailwind etsii käytettyjä luokkia (className) tyylien luontiin,näistä tiedostoista Tailwind etsii tyylit
     theme: {
       extend: { 
+        fontFamily: {
+          lobster: ['Lobster', 'cursive'],
+        },
         colors: {
           Pinkki: "#ff69b4",
           PastelliKeltainen: "#fff9c4",
