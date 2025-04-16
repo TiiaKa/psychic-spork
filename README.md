@@ -1,70 +1,130 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# psychic-spork
+Web-kehitys projekti
 
-## Available Scripts
+Projektin määrittely ja suunnittelu
+------------------------------------
+**<p style="color: blue;">Interaktiivinen To-Do -sovellus</p>**
+Halusin tehdä sovelluksen mikä olisi itselle oikeasti hyödyllinen ja jolle olisi käyttöä.  
+Tässä sovelluksessa käyttäjä voisi lisätä ja poistaa tehtäviä sekä merkitä niitä tehdyiksi.  
+ Lisäksi käyttäjä voisi kategorisoida tehtäviä lisäämällä niihin tunnisteita, esimerkkeinä työ, koulu, koti, kauppa, salitreeni jne.
+Väriteeman muokkaus ja deadline-muistutukset olisi hyvä lisä sovellukseen.
 
-In the project directory, you can run:
+**Käyttäjäkunta ja käyttäjäpersoonat**  
 
-### `npm start`
+Sovelluksen käyttäjäkuntana olisi pääasiassa nuoret aikuiset (18-40v), mutta sovellus sopii tietysti kenelle tahansa joka haluaa organisoida arkeaan.  
+ Sovellus on ensisijaisesti henkilökohtaiseen käyttöön, mutta sen voisi myöhemmin laajentaa myös tiimikäyttöön tai jaettavaksi vaikka puolisolle.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**Käyttäjäpersoonia:**  
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Laura, 28 projektipäällikkö  
 
-### `npm test`
+Haluaa organisoida työtehtävänsä tehokkaasti.
+Tarvitsee deadline-muistutuksia ja prioriteettimerkintöjä.
+Käyttää sovellusta läppärillä ja puhelimella.
+Janne, 35, koti-isä  
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Haluaa hallita kauppaostoksia ja kotitöitä.
+Jakaa tehtävälistan puolisonsa kanssa.
+Käyttää sovellusta mobiilissa.
+Emma, 22, opiskelija  
 
-### `npm run build`
+Tekee kurssitehtäviä ja muistiinpanoja deadlineista.
+Käyttää tunnisteita (esim. koulu, työ, vapaa-aika).
+Tommi, 30, graafikko  
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Tarvitsee deadline-muistutuksia asiakastöille.
+Käyttää vain mobiililaitteita ja haluaa tyylikkään UI:n.
+Maria, 40, yksinhuoltaja  
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Haluaa jakaa listan lastensa kanssa (kotityöt, kauppalista).
+Käyttää vain yksinkertaisia perustoimintoja.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Sovelluksen ominaisuudet**  
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Perusominaisuudet:  
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Tehtävien lisäys, poisto ja muokkaus  
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Tehtävien merkitseminen tehdyksi  
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Tunnisteiden lisääminen (Työ, Koulu, Koti, jne.)  
 
-## Learn More
+- Tehtävien deadline + muistutukset  
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Väriteeman vaihtaminen (Light/Dark mode)  
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Pilvitallennus (Firebase/MongoDB)  
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Lisäominaisuudet:  
 
-### Analyzing the Bundle Size
+- Tehtävien jakaminen toiselle käyttäjälle  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Push-ilmoitukset ennen deadlinea  
 
-### Making a Progressive Web App
+- Responsiivinen UI (toimii mobiilissa ja desktopissa)  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+**Käyttöliittymän suunnittelu**  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Prototyyppi:  
 
-### Deployment
+Navigaatiopalkki, jossa "Kaikki tehtävät", "Tunnisteet", "Asetukset".  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Päänäkymässä listattuna tehtävät ja kategoriat, painike uuden tehtävän lisäämiseen ja mahdollisuus muokata väriteemaa.  
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+ Sivukartta :  
+
+Etusivu (Tehtävälista) – näyttää kaikki tehtävät  
+
+Lisää tehtävä -sivu – uuden tehtävän luonti  
+
+Tunnisteet – suodata tehtävät kategorioittain  
+
+Asetukset – vaihda väriteema ja ilmoitusasetukset  
+
+Navigaatio :  
+
+Käyttäjä näkee tehtävät pääsivulla, josta voi lisätä uuden tehtävän, tunnisteen, asettaa deadlinen jab muokata asetuksia
+(+ jakaa listan toiselle käyttäjälle)  
+![Proto](https://github.com/TiiaKa/psychic-spork/blob/9deef0ff1e312ebc3210b07a4ceeb34ecc8e72af/IMG20250401184746.jpg)
+
+**Tekninen suunnittelu**  
+
+- Frontend: React + Tailwind CSS (koska kevyt eikä tarvitse käyttää erillisiä CSS-tiedostoja)  
+
+- Backend: Node.js + Express + Firebase (ilmainen pilvitallennus)  
+
+- Tietokantarakenteena Firestone-tietomalli  
+
+
+**Projektinhallinta**   
+
+Sprintit ja tehtävät:  
+
+ Sprintti 1: UI-suunnittelu ja frontend-kehitys  
+
+ Sprintti 2: Backend (Node.js + Firebase)  
+
+ Sprintti 3: Tehtävien deadline-muistutukset ja väriteema  
+
+ Sprintti 4: Pilvitallennuksen testaus ja mahdollinen jakamisominaisuus  
+
+
+**Käyttäjätestaus**  
+
+Testausvaihe 1:  
+
+- Testataan perustoiminnot: tehtävien lisäys, poisto, deadline-muistutukset  
+
+Testausvaihe 2:  
+
+- Testataan eri laitteilla  
+
+Testausvaihe 3:  
+
+- Testataan käytettävyys käyttäjillä, tarkistetaan käytettävyys ja bugit ennen julkaisua
+>>>>>>> 6e90f038c17169e101d9803dce121a24c9599e3e
