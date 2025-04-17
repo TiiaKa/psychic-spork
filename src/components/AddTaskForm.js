@@ -12,7 +12,6 @@ const AddTaskForm = ({ onAdd }) => {
     if (!nimi) return;
 
     const uusiTehtava = {
-      id: Date.now(),
       nimi,
       kategoria,
       deadline,
