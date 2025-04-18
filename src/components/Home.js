@@ -7,9 +7,10 @@ function Home({ tasks, setTasks, editTaskId, setEditTaskId, editText, setEditTex
   const [valittuKategoria, setValittuKategoria] = useState('Kaikki');
   const [selectedTag, setSelectedTag] = useState(null);
   const backendUrl = process.env.REACT_APP_BACKEND_URL;
+// sovelluksen kotinäkymä, jossa näkyy tehtävälista
 
   // Haetaan tehtävät backendistä kun komponentti latautuu
-  useEffect(() => {
+  useEffect(() => { // tämä hakee tehtävät palvelimelta käynnistyksessä
     fetch(`${backendUrl}/api/tehtavat`)
       .then((res) => res.json())
       .then((data) => setTasks(data))
@@ -28,7 +29,7 @@ function Home({ tasks, setTasks, editTaskId, setEditTaskId, editText, setEditTex
       .then((savedTask) => setTasks((prev) => [...prev, savedTask]))
       .catch((err) => console.error("Tehtävän lisäys epäonnistui:", err));
   };
-
+// käyttäjä voi muokata tai poistaa tehtäviä, suodattaa niitä kategorian mukaan sekä muokata/poistaa olemassa olevia tehtviä.
   const deleteTask = (id) => {
     fetch(`${backendUrl}/api/tehtavat/${id}`, { method: 'DELETE' })
       .then(() => setTasks((prev) => prev.filter((t) => t.id !== id)))

@@ -5,7 +5,7 @@ const Settings = ({ darkMode, setDarkMode, username, setUsername }) => {
   useEffect(() => {
     setInputValue(username);
   }, [username]);
-
+// Asetussivu, jossa käyttäjä voi muuttaa nimeään ja vaihtaa teeman tummaksi tai vaaleaksi.
   const handleUsernameChange = (e) => setInputValue(e.target.value);
 
   const handleUsernameSave = () => {
@@ -22,7 +22,7 @@ const Settings = ({ darkMode, setDarkMode, username, setUsername }) => {
 
   const resetApp = () => {
     if (window.confirm("Haluatko varmasti poistaa kaikki tehtävät ja nollata sovelluksen?")) {
-      fetch(`${process.env.REACT_APP_BACKEND_URL}/api/tehtavat/reset`, { method: 'POST' }) // oletetaan että backend tukee tätä
+      fetch(`${process.env.REACT_APP_BACKEND_URL}/api/tehtavat/reset`, { method: 'POST' })
         .then(() => {
           localStorage.removeItem('username'); // poistetaan vain käyttäjänimi
           window.location.reload();
@@ -58,7 +58,7 @@ const Settings = ({ darkMode, setDarkMode, username, setUsername }) => {
           type="text"
           value={inputValue}
           onChange={handleUsernameChange}
-          className="p-2 rounded border border-gray-400"
+          className="p-2 rounded border border-gray-400 bg-white text-black dark:bg-gray-900 dark:text-white"
         />
         <button onClick={handleUsernameSave} className="ml-2 bg-PastelliSininen px-2 py-1 rounded">Tallenna</button>
       </section>

@@ -1,5 +1,6 @@
 import React from 'react';
 
+// yksittäinen tehtäväkortti, näyttää tehtävän nimen, kategorian, deadlinen ja tunnisteet.
 const TaskItem = ({ tehtava, onToggleDone, onPoista, onEdit }) => {
   return (
     <div className="bg-PastelliKeltainen shadow rounded p-4 flex justify-between items-start">
@@ -26,7 +27,7 @@ const TaskItem = ({ tehtava, onToggleDone, onPoista, onEdit }) => {
       <div className="flex flex-col gap-2 items-end">
       <button
   onClick={() => onToggleDone(tehtava.id)}
-  title="Merkitse tehdyksi"
+  title="Merkitse tehdyksi" //käyttäjä voi merkitä tehtävän tehdyksi, muokata sen nimeä tai poistaa sen.
 >
   {tehtava.tehty ? '✅' : '☐'}
 </button>

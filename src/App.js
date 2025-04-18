@@ -6,6 +6,7 @@ import Tags from './components/Tags';
 import Header from './components/Header';
 import ErrorBoundary from './components/ErrorBoundary';
 
+// react ja router-dom sivujen hallintaa. lisäksi tuodaan komponentit omista hakemistoista (home, settings jne.)
 function App() {
   const [darkMode, setDarkMode] = useState(
     () => localStorage.getItem('darkMode') === 'true'
@@ -19,22 +20,26 @@ function App() {
     const saved = localStorage.getItem('tasks');
     return saved ? JSON.parse(saved) : [];
   });
-
+//usestate: hallitaan tiloja (darkmode, käyttäjänimi, tehtävät, tehtävän muokkaustila)
   const [editTaskId, setEditTaskId] = useState(null);
   const [editText, setEditText] = useState('');
 
-  useEffect(() => {
-    localStorage.setItem('darkMode', darkMode);
+  useEffect(() => { //useEffectin darkmode tallentaa teeman localstorageen ja vaihtaa css-luokan tummaa tilaa varten
+    localStorage.setItem('darkMode', darkMode); //localstorage: säilyttää joitakin näistä tiloista, eli asetukset säilyy selaimen uudelleenkäynnistyksen jälkeen
     document.documentElement.classList.toggle('dark', darkMode);
   }, [darkMode]);
 
   useEffect(() => {
     localStorage.setItem('tasks', JSON.stringify(tasks));
-  }, [tasks]);
+  }, [tasks]); // tasks tallentaa tehtävälistan localstorageen aina kun tehtävälista muuttuu
 
+  //sovellus hyödyntää router-dom kirjastyoa joka mahdollistaa navigoinnin eri sivujen välillä.
+  //errorboundary on virheenhallinta-komponentti johon sovellus on "kääritty"
+  //router mahdollistaa reitityksen
+  //routes määrittää eri sivujen reitityksen
   return (
-    <ErrorBoundary>
-      <Router>
+    <ErrorBoundary> 
+      <Router> 
         <div className={`min-h-screen ${darkMode ? 'bg-gray-900 text-white' : 'bg-white text-black'}`}>
         <Header username={username} darkMode={darkMode} setDarkMode={setDarkMode} />
           <Routes>

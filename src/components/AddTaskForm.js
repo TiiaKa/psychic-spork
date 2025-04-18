@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 
+
+// lomake uusien tehtävien lisäämiseen
+
 const AddTaskForm = ({ onAdd }) => {
   const [nimi, setNimi] = useState('');
   const [kategoria, setKategoria] = useState('Työ');
   const [deadline, setDeadline] = useState('');
   const [tags, setTags] = useState('');
-
+//käyttäjä syöttää nimen, kategorian, deadline-päivämäärän ja mahdolliset tunnisteet
   
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -18,7 +21,7 @@ const AddTaskForm = ({ onAdd }) => {
       tehty: false,
       tags: tags.split(',').map(tag => tag.trim()).filter(Boolean),
     };
-
+// kun lomake lähetetään, onAdd-funktio kutsutaan uudella tehtävällä
     onAdd(uusiTehtava);
     setNimi('');
     setKategoria('Työ');
@@ -26,6 +29,7 @@ const AddTaskForm = ({ onAdd }) => {
     setTags('');
   };
 
+  //tehtävän luominen:
   return (
     <form onSubmit={handleSubmit} className="bg-PastelliSininen p-4 rounded shadow-md mb-6">
       <h2 className="text-xl font-bold mb-2 text-black">➕ Lisää uusi tehtävä</h2>

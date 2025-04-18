@@ -2,7 +2,8 @@
 import { Link } from 'react-router-dom';
 
 
-
+// Ylätunniste, jossa näkyy käyttäjän tervehdys, linkit etusivulle ja asetuksiin sekä tumman/vaalean tilan kytkin.
+// darkMode-tila vaihtuu napista, ja se vaikuttaa koko sovelluksen teemaan.
 const Header = ({ username, darkMode, setDarkMode }) => {
   return (
     <div className="bg-PastelliLila text-black dark:bg-gray-900 dark:text-white px-6 py-4 flex justify-between items-center shadow-md">
