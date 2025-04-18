@@ -22,9 +22,12 @@ const Settings = ({ darkMode, setDarkMode, username, setUsername }) => {
 
   const resetApp = () => {
     if (window.confirm("Haluatko varmasti poistaa kaikki tehtävät ja nollata sovelluksen?")) {
-      fetch(`${process.env.REACT_APP_BACKEND_URL}/api/tehtavat/reset`, { method: 'POST' })
+      const resetUrl = `${process.env.REACT_APP_BACKEND_URL}/api/tehtavat/reset`;
+      console.log("Reset URL:", resetUrl);
+  
+      fetch(resetUrl, { method: 'POST' })
         .then(() => {
-          localStorage.removeItem('username'); // poistetaan vain käyttäjänimi
+          localStorage.removeItem('username');
           window.location.reload();
         })
         .catch(() => alert("Virhe nollatessa sovellusta."));
