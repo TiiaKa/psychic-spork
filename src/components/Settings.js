@@ -28,11 +28,12 @@ const Settings = ({ darkMode, setDarkMode, username, setUsername }) => {
       fetch(resetUrl, { method: 'POST' })
         .then(() => {
           localStorage.removeItem('username');
-          window.location.reload();
+          window.location.href = '/'; // Tämä korvaa .reload() ja pitää käyttäjän frontendin puolella
         })
         .catch(() => alert("Virhe nollatessa sovellusta."));
     }
   };
+  
 
   return (
 <div className="p-6 space-y-6 bg-PastelliLila dark:bg-gray-800 min-h-screen text-black dark:text-white">
