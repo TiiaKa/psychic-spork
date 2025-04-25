@@ -92,6 +92,20 @@ Käyttäjä näkee tehtävät pääsivulla, josta voi lisätä uuden tehtävän,
 (+ jakaa listan toiselle käyttäjälle)  
 ![Proto](https://github.com/TiiaKa/psychic-spork/blob/9deef0ff1e312ebc3210b07a4ceeb34ecc8e72af/IMG20250401184746.jpg)
 
+**Käyttötapaukset**
+
+Käyttäjä voi lisätä uuden tehtävän
+Käyttäjä voi merkitä tehtävän tehdyksi
+Käyttäjä voi poistaa tehtävän
+Käyttäjä voi vaihtaa väriteeman (dark/light)
+Käyttäjä voi tallentaa oman nimensä ja vaihtaa sitä asetuksissa
+Käyttäjä voi jakaa tehtävälistan toiselle henkilölle
+Sovellus toimii mobiilissa ja tietokoneella
+Tehtävien tunnisteiden (kategoria) lisääminen
+Deadline ja muistutukset tehtäville
+Tehtävien jako reaaliaikaisesti tiimikäyttöön
+Tehtävien pilvitallennus
+
 **Tekninen suunnittelu**  
 
 - Frontend: React + Tailwind CSS (koska kevyt eikä tarvitse käyttää erillisiä CSS-tiedostoja)  
