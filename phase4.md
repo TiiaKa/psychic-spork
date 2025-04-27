@@ -11,5 +11,5 @@ Sovelluksen tarkoituksena on tarjota arkea helpottava tehtävälista, joka toimi
 
 🔗 Linkit
 •	Sovellus (live): https://todo-app-s89w.onrender.com
-•	GitHub-repo: https://github.com/TiiaKa/psychic-spork
+•	GitHub-repo: https://github.com/TiiaKa/psychic-spork JA backend-repo: https://github.com/TiiaKa/todo-backend (eri repoissa koska helpompi käyttää Renderissä)
 •	esittelyvideo: 
